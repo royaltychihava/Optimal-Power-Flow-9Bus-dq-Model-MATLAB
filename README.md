@@ -15,14 +15,14 @@ This project implements an optimal power flow (OPF) analysis of a 9-bus test sys
 ## System Model
 
 ### 9-Bus Network
-![9-Bus Network](01_9bus_network_diagram.png)
+![9-Bus Network](9bus_network_diagram.png)
 
 Standard 9-bus benchmark system used for analysis.
 
 ---
 
 ### Line Connectivity Data
-![Line Connectivity](02_line_connection_table.png)
+![Line Connectivity](line_connection_table.png)
 
 Defines how buses are interconnected and is used to construct the node incidence matrix.
 
@@ -31,7 +31,7 @@ Defines how buses are interconnected and is used to construct the node incidence
 ## Mathematical Formulation
 
 ### dq-Domain Representation (M-Matrix)
-![M-Matrix](03_m_matrix_representation.png)
+![M-Matrix](m_matrix_representation.png)
 
 The M-matrix represents the relationship between:
 - Branch currents  
@@ -126,7 +126,7 @@ Calculates total system losses.
 ## Results
 
 ### Voltage Comparison
-![Voltage Results](04_voltage_comparison_results.png)
+![Voltage Results](voltage_comparison_results.png)
 
 - Voltage magnitude error < 0.01 pu  
 - Voltage angle error < 1°  
@@ -151,7 +151,7 @@ Calculates total system losses.
 ---
 
 ## Files
-- dq_Optimal_Power_Flow_9Bus_fmincon.m  
+- dq_PowerFlow_without_FACTS_fmincon_9BUS.m  
 
 ---
 
