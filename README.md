@@ -1,7 +1,7 @@
-# Optimal Power Flow of a 9-Bus System using dq Modeling
+# Optimal Power Flow of a 9-Bus System using dq Modelling
 
 ## Overview
-This project implements an optimal power flow (OPF) analysis of a 9-bus test system using MATLAB. The system is modeled in dq-coordinates, transforming voltages, currents, and network equations into the direct-quadrature domain for efficient numerical solution.
+This project implements an optimal power flow (OPF) analysis of a 9-bus test system using MATLAB. The system is modelled in dq-coordinates, transforming voltages, currents, and network equations into the direct-quadrature domain for efficient numerical solution.
 
 ---
 
@@ -33,11 +33,22 @@ Defines how buses are interconnected and is used to construct the node incidence
 ### dq-Domain Representation (M-Matrix)
 ![M-Matrix](m_matrix_representation.png)
 
-The M-matrix represents the relationship between:
-- Branch currents  
-- Bus currents  
-- Bus voltages in d and q coordinates  
+The constructed M-matrix has dimensions of **90 × 144**, representing the relationship between system variables in dq-coordinates.
 
+- The total number of unknown variables in the system is **144**, meaning additional equations are required to obtain a unique solution.  
+- Since the M-matrix provides **90 equations**, an additional **54 equations** are needed.
+
+These additional equations are obtained as follows:
+
+- **18 equations** are derived from bus conditions:  
+  - Each of the **9 buses** contributes **2 equations** (based on PQ, PV, and slack bus specifications).  
+  - These are implemented in the MATLAB code as **nonlinear equality constraints** within the optimization problem.
+
+- **36 equations** are obtained by setting the voltages of all FACTS devices to zero:  
+  - Both **series and shunt FACTS devices** are excluded in this case  
+  - This simplifies the system by removing their influence  
+
+The complete system is then solved using the `fmincon` function, which determines the unknown variables while satisfying all constraints.
 ---
 
 ## Methodology
