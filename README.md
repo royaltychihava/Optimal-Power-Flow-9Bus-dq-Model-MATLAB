@@ -147,7 +147,7 @@ Calculates total system losses.
 ---
 
 ## Key Insights
-- dq-domain modeling is effective for power flow analysis  
+- dq-domain modelling is effective for power flow analysis  
 - Optimization using `fmincon` converges reliably  
 - Results closely match standard 9-bus data  
 - Method can be extended to:
@@ -168,7 +168,7 @@ Calculates total system losses.
 ---
 
 ## Conclusion
-This project demonstrates the successful implementation of power flow analysis using dq-domain modeling and constrained optimization. The results validate the approach and highlight its potential for advanced power system applications.
+This project demonstrates the successful implementation of power flow analysis using dq-domain modelling and constrained optimization. The results validate the approach and highlight its potential for advanced power system applications.
 
 ---
 
