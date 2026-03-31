@@ -47,8 +47,8 @@ These additional equations are obtained as follows:
 - **36 equations** are obtained by setting the voltages of all FACTS devices to zero:  
   - Both **series and shunt FACTS devices** are excluded in this case  
   - This simplifies the system by removing their influence  
+The complete system is then solved using the `fmincon` function, which determines the unknown variables while satisfying all constraints
 
-The complete system is then solved using the `fmincon` function, which determines the unknown variables while satisfying all constraints.
 ---
 
 ## Methodology
